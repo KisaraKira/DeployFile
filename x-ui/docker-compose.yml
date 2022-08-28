@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  xui:
+    image: enwaiax/x-ui
+    container_name: x-ui
+    ports:
+      - "127.0.0.1:45501:54321"
+      - "127.0.0.1:45502-45600:45502-45600"
+    volumes:
+      - ./db/:/etc/x-ui/
+      - ./cert/:/root/cert/
+    restart: unless-stopped
