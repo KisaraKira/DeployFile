@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    uptime-kuma:
+        restart: always
+        ports:
+            - '127.0.0.1:53001:3001'
+        volumes:
+            - '/usr/local/uptime-kuma:/app/data'
+        container_name: uptime-kuma
+        image: 'louislam/uptime-kuma:1.18.0-beta.0'
